@@ -22,7 +22,8 @@ alloy-hardforks.workspace = true
 alloy-rpc-types-eth = { workspace = true, optional = true }
 alloy-rpc-types-engine = { workspace = true, optional = true }
 
-revm = { workspace = true, features = ["inspector"] }
+revm.workspace = true
+revm-inspector.workspace = true
 
 auto_impl.workspace = true
 derive_more.workspace = true
