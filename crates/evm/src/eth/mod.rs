@@ -241,7 +241,7 @@ where
         // mode is enabled, so the Firehose tracer observes system-call frames
         // (https://github.com/streamingfast/evm/pull/1, originally alloy-rs/evm#323).
         if self.inspect {
-            return self.inner.inspect_one_system_call_with_caller(caller, contract, data);
+            return self.inner.inspect_system_call_with_caller(caller, contract, data);
         }
         self.inner.system_call_with_caller(caller, contract, data)
     }
