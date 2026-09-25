@@ -236,6 +236,12 @@ where
         contract: Address,
         data: Bytes,
     ) -> Result<ResultAndState<Self::HaltReason>, Self::Error> {
+        // Cubewire (SF patch): route the system call through the inspector when inspect
+        // mode is enabled, so the Firehose tracer observes system-call frames
+        // (https://github.com/streamingfast/evm/pull/1, originally alloy-rs/evm#323).
+        if self.inspect {
+            return self.inner.inspect_system_call_with_caller(caller, contract, data);
+        }
         self.inner.system_call_with_caller(caller, contract, data)
     }
 
