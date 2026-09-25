@@ -18,6 +18,7 @@ use revm::{
     primitives::hardfork::SpecId,
     Context, ExecuteEvm, InspectEvm, Inspector, MainBuilder, MainContext, SystemCallEvm,
 };
+use revm_inspector::InspectSystemCallEvm;
 
 mod block;
 pub use block::*;
