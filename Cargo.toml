@@ -49,8 +49,8 @@ alloy-rpc-types-eth = { version = "2.0.0", default-features = false }
 alloy-rpc-types-engine = { version = "2.0.0", default-features = false }
 
 # revm
-revm = { version = "43.0.0", default-features = false }
-revm-inspector = { version = "43.0.0", default-features = false }
+revm = { version = "43.0.0", default-features = false, features = ["inspector"] }
+revm-inspector = { version = "43.0.0", default-features = false, features = ["std"] }
 
 # tracing
 tracing = { version = "0.1", default-features = false }
